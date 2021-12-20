@@ -4,10 +4,18 @@ from state import State
 from env import *
 
 
+def gen_v_id():
+    x = 0
+    while True:
+        x += 1
+        yield x
+
+
 class Vechicle:
     """vechicle class"""
 
     def __init__(self, v_type):
+        self.__id = next(gen_v_id())
         self.type = v_type
         self.__free_at = 0
         self.__state = State.FREE

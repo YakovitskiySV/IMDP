@@ -5,6 +5,13 @@ import datetime as dt
 from env import *
 
 
+def gen_p_id():
+    x = 0
+    while True:
+        x += 1
+        yield x
+
+
 class Platform:
     """platform class"""
 
@@ -20,6 +27,10 @@ class Platform:
         busy_time = Platform.__calculate_unload_time(truck)
         self.__free_at = current_time + busy_time
         self.__vech.set_busy(busy_time, current_time)
+        self.print_stat(busy_time)
+
+    def print_stat(self, busy_time):
+        print(f"plat {id(self)} busy for {busy_time}")
 
     @staticmethod
     def __calculate_unload_time(truck):

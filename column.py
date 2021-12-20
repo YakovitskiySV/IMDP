@@ -37,9 +37,7 @@ class TruckColumn:
                 column_truck_types.append(cur_type)
         return column_truck_types
 
-    def __str__(
-        self,
-    ):
+    def __str__(self):
         msg = f"trucks in column: {len(self.__trucks)}"
         for i, truck in enumerate(self.__trucks):
             msg += f"\t\n{i}: {truck}"

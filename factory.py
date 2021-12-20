@@ -32,11 +32,16 @@ class Factory:
                 truck, current_time
             )
             if free_platform is None:
+                print("unable to unload: no free platform")
                 return
             if free_vech is not None:
                 free_platform.unload_truck(truck, free_vech, current_time)
                 print(f"unloading: {truck} with {free_vech}")
                 self.__trucks.pop(i)
+            else:
+                print("unable to unload: no free vechihle")
+
+        print(f"trucks queue: {len(self.__trucks)}")
 
     def __find_free_plat_and_vech(self, truck, current_time):
         if not self.__trucks:

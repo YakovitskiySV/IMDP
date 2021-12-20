@@ -17,5 +17,5 @@ if __name__ == "__main__":
             fac.add_trucks(new_column.get_trucks())
             fac.unload_trucks(current_time)
             next_column_time = random.expovariate(1 / NEXT_COLUMN_K)
-
+            print(current_time)
         current_time += 1
